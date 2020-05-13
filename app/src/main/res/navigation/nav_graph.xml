@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/Fragment_board">
+
+    <fragment
+        android:id="@+id/Fragment_board"
+        android:name="com.fct.notto.Fragment_board"
+        android:label="@string/app_name"
+        tools:layout="@layout/board_fragment">
+        <action
+            android:id="@+id/action_fragment_board_to_fragment_user"
+            app:destination="@id/fragment_user" />
+        <action
+            android:id="@+id/action_fragment_board_to_fragment_notes"
+            app:destination="@id/fragment_notes" />
+        <action
+            android:id="@+id/action_fragment_board_to_fragment_canvas"
+            app:destination="@id/fragment_canvas" />
+        <action
+            android:id="@+id/action_fragment_board_to_fragment_note"
+            app:destination="@id/fragment_note" />
+        <action
+            android:id="@+id/action_fragment_board_to_fragment_draw"
+            app:destination="@id/fragment_draw" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_canvas"
+        android:name="com.fct.notto.Fragment_canvas"
+        android:label="@string/canvas"
+        tools:layout="@layout/canvas_fragment"/>
+    <fragment
+        android:id="@+id/fragment_notes"
+        android:name="com.fct.notto.Fragment_notes"
+        android:label="@string/notes"
+        tools:layout="@layout/notes_fragment"/>
+    <fragment
+        android:id="@+id/fragment_draw"
+        android:name="com.fct.notto.Fragment_draw"
+        android:label="@string/draw"
+        tools:layout="@layout/draw_fragment"/>
+    <fragment
+        android:id="@+id/fragment_note"
+        android:name="com.fct.notto.Fragment_note"
+        android:label="@string/note"
+        tools:layout="@layout/note_fragment"/>
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.fct.notto.Fragment_login"
+        android:label="@string/login_screen"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_board"
+            app:destination="@id/Fragment_board" />
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_register"
+            app:destination="@id/fragment_register" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.fct.notto.Fragment_register"
+        android:label="@string/register_screen"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/action_fragment_register_to_fragment_login"
+            app:destination="@id/fragment_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_user"
+        android:name="com.fct.notto.Fragment_user"
+        android:label="@string/user_screen"
+        tools:layout="@layout/user_fragment"/>
+</navigation>
