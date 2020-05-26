@@ -3,10 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/userIcon"
-        android:icon="@drawable/ic_user_button"
-        android:title="@string/usericon"
-        app:showAsAction="ifRoom" />
-
+        android:id="@+id/closeSession"
+        android:title="@string/closeSession"
+        app:showAsAction="never" />
 
 </menu>
