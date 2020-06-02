@@ -47,7 +47,7 @@ public class Fragment_notes extends Fragment {
         view = inflater.inflate(R.layout.notes_fragment, container, false);
 
         prefsEdit = getActivity().getSharedPreferences("edit", Context.MODE_PRIVATE);
-        prefsNoteInfo = getActivity().getSharedPreferences("noteinfo", Context.MODE_PRIVATE);
+        prefsNoteInfo = getActivity().getSharedPreferences("noteInfo", Context.MODE_PRIVATE);
         boolean isEdit = prefsEdit.getBoolean("editMode", false);
 
         String titleToEdit = prefsNoteInfo.getString("title", null);

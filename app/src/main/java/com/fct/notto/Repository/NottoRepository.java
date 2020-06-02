@@ -1,11 +1,9 @@
 package com.fct.notto.Repository;
 
-import android.app.Activity;
 import android.app.Application;
 import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 import androidx.room.Room;
-
 import com.fct.notto.RoomDatabase.Draw;
 import com.fct.notto.RoomDatabase.DrawDao;
 import com.fct.notto.RoomDatabase.Note;
@@ -13,11 +11,8 @@ import com.fct.notto.RoomDatabase.NoteDao;
 import com.fct.notto.RoomDatabase.NottoDatabase;
 import com.fct.notto.RoomDatabase.User;
 import com.fct.notto.RoomDatabase.UserDao;
-
-import java.lang.ref.WeakReference;
 import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
+
 
 public class NottoRepository {
 

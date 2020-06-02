@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-
 import com.fct.notto.R;
 import com.fct.notto.RoomDatabase.User;
 import com.fct.notto.Utils;
@@ -22,7 +21,6 @@ import com.fct.notto.ViewModel.UserViewModel;
 
 
 public class Fragment_login extends Fragment {
-
     private EditText editTextEmail, editTextPassword;
     private Button buttonLogin, btnRegister;
     private View view;
@@ -35,12 +33,13 @@ public class Fragment_login extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
     }
+
     @Override
     public void onStop() {
         super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
     }
 
     @Nullable
@@ -74,7 +73,6 @@ public class Fragment_login extends Fragment {
     }
 
     private void login() {
-
         String toastLogin = getActivity().getResources().getString(R.string.toast_login_fail);
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -91,14 +89,15 @@ public class Fragment_login extends Fragment {
 
     }
 
+    //Carga los SharedPReferences para pasar el estado de sesión iniciada, y el email utilizado.
+    //Se inicia cuando el login es correcto.
     private void spLogin() {
         SharedPreferences prefsLogged = getActivity().getSharedPreferences("logged", Context.MODE_PRIVATE);
-        SharedPreferences prefsUserMail = getActivity().getSharedPreferences("userMail", Context.MODE_PRIVATE);
-
         SharedPreferences.Editor editorLogged = prefsLogged.edit();
-        SharedPreferences.Editor editorUserMail = prefsUserMail.edit();
-
         editorLogged.putBoolean("isLogged", true).apply();
+
+        SharedPreferences prefsUserMail = getActivity().getSharedPreferences("userMail", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editorUserMail = prefsUserMail.edit();
         editorUserMail.putString("Mail", editTextEmail.getText().toString()).apply();
     }
 

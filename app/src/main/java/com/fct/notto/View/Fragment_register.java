@@ -31,7 +31,7 @@ public class Fragment_register extends Fragment {
     private EditText etNombre, etMail, etPassword, etRepassword;
     private Button btRegister, btBackToLogin;
     private View view;
-    private String toastEmail, toastPassword, errorName, errorMail, errorPass, errorValidMail, errorValidPass;
+    private String toastEmail, toastPassword, errorName, errorMail, errorPass, errorValidMail, errorValidPass, successRegister;
     private UserViewModel userViewModel;
     @Override
     public void onAttach(Context context) {
@@ -39,11 +39,13 @@ public class Fragment_register extends Fragment {
 
     }
 
+    //Esconder la barra de tareas al abrirse
     @Override
     public void onResume() {
         super.onResume();
         ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
     }
+    //Enseñar la barra de tareas al cerrarse
     @Override
     public void onStop() {
         super.onStop();
@@ -62,6 +64,8 @@ public class Fragment_register extends Fragment {
         btRegister = view.findViewById(R.id.btn_register);
         btBackToLogin = view.findViewById(R.id.btn_backtologin);
 
+        //Botón para introducir los datos. Primero comprueba su validez mediante validateImput(),
+        //despues los registra en la base de datos y regresa a la pantalla de login
         btRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,7 +133,7 @@ public class Fragment_register extends Fragment {
         String name = etNombre.getText().toString().trim();
         String mail = etMail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
-        String repassword = etRepassword.getText().toString().trim();
+        successRegister = getActivity().getResources().getString(R.string.toast_succesRegister);
 
             User newUser = new User();
             newUser.setUserName(name);
@@ -137,6 +141,7 @@ public class Fragment_register extends Fragment {
             newUser.setPassword(password);
             userViewModel.insert(newUser);
             Navigation.findNavController(view).navigate(R.id.action_fragment_register_to_fragment_login);
+            Toast.makeText(getActivity(), successRegister, Toast.LENGTH_SHORT).show();
 
     }
 }

@@ -27,7 +27,7 @@ public class Fragment_user extends Fragment {
     View view;
     private TextView tvuserMail;
     private TextView tvuserName;
-    private Button btChangeName, btChangeMail, btChangePass;
+    private Button btChangeName, btChangePass;
 
     @Override
     public void onAttach(Context context) {
@@ -41,7 +41,6 @@ public class Fragment_user extends Fragment {
         tvuserMail = view.findViewById(R.id.tvuserEmail);
         tvuserName = view.findViewById(R.id.tvuserName);
         btChangeName = view.findViewById(R.id.btChangeName);
-        btChangeMail= view.findViewById(R.id.btChangeMail);
         btChangePass= view.findViewById(R.id.btChangePassword);
 
         SharedPreferences prefsUserMail = getActivity().getSharedPreferences("userMail", Context.MODE_PRIVATE);

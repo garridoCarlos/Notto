@@ -56,6 +56,7 @@ public class Fragment_board extends Fragment {
             });
 
 
+            //Gestiona el borrado y cambio de posición de las notas deslizándolas.
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.DOWN| ItemTouchHelper.UP,
                 ItemTouchHelper.LEFT| ItemTouchHelper.RIGHT) {
             @Override
@@ -80,7 +81,7 @@ public class Fragment_board extends Fragment {
             @Override
             public void onItemClick(Note note) {
                 SharedPreferences prefsEdit = getActivity().getSharedPreferences("edit", Context.MODE_PRIVATE);
-                SharedPreferences prefsNoteInfo = getActivity().getSharedPreferences("noteinfo", Context.MODE_PRIVATE);
+                SharedPreferences prefsNoteInfo = getActivity().getSharedPreferences("noteInfo", Context.MODE_PRIVATE);
 
                 SharedPreferences.Editor editorEdit = prefsEdit.edit();
                 SharedPreferences.Editor editorNoteinfo = prefsNoteInfo.edit();
@@ -90,7 +91,6 @@ public class Fragment_board extends Fragment {
                 editorNoteinfo.putString("title", note.getTitle()).apply();
                 editorNoteinfo.putString("content", note.getText()).apply();
                 editorNoteinfo.putString("userMail", note.getUserEmail()).apply();
-
 
                 Navigation.findNavController(view).navigate(R.id.action_fragment_board_to_fragment_notes);
                 Toast.makeText(getActivity(), toastEdit , Toast.LENGTH_SHORT).show();

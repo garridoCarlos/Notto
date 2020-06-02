@@ -61,5 +61,6 @@
     <string name="usermailChanged">Email cambiado</string>
     <string name="wrongPass">Contraseña incorrecta</string>
     <string name="passwordChanged">Contraseña cambiada</string>
+    <string name="toast_succesRegister">Registro realizado con éxito</string>
 
 </resources>

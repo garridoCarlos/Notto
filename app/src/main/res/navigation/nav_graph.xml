@@ -19,11 +19,6 @@
         <action
             android:id="@+id/action_fragment_board_to_fragment_user"
             app:destination="@id/fragment_user" />
-        <argument
-            android:name="userMail"
-            android:defaultValue="default"
-            app:argType="string"
-            app:nullable="true" />
         <action
             android:id="@+id/action_fragment_board_to_fragment_login"
             app:destination="@id/fragment_login"
@@ -84,7 +79,7 @@
     <fragment
         android:id="@+id/fragment_editUserName"
         android:name="com.fct.notto.View.Fragment_editUserName"
-        android:label="Fragment_editUserName"
+        android:label="@string/changeName"
         tools:layout="@layout/edit_username_fragment">
         <action
             android:id="@+id/action_fragment_editUserName_to_fragment_user"
@@ -94,12 +89,12 @@
     <fragment
         android:id="@+id/fragment_editUserPass"
         android:name="com.fct.notto.View.Fragment_editUserPass"
-        android:label="Fragment_editUserPass"
+        android:label="@string/changePass"
         tools:layout="@layout/edit_userpassword_fragment">
         <action
             android:id="@+id/action_fragment_editUserPass_to_fragment_user"
             app:destination="@id/fragment_user"
-            app:popUpTo="@id/fragment_board"/>
+            app:popUpTo="@id/fragment_board" />
     </fragment>
     <action
         android:id="@+id/action_global_fragment_login"

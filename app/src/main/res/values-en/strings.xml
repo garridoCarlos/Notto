@@ -53,14 +53,15 @@
     <string name="changeName">Change name</string>
     <string name="changeMail">Change email</string>
     <string name="changePass">Change password</string>
-    <string name="newName">Nuevo nombre</string>
-    <string name="newmail">Nuevo email</string>
-    <string name="oldPass">Contraseña a cambiar</string>
-    <string name="newPass">Nueva contraseña</string>
-    <string name="newRepass">Repita la nueva contraseña</string>
-    <string name="usernameChanged">Nombre de usuario cambiado</string>
-    <string name="usermailChanged">Email cambiado</string>
-    <string name="wrongPass">Contraseña incorrecta</string>
-    <string name="passwordChanged">Contraseña cambiada</string>
+    <string name="newName">New name</string>
+    <string name="newmail">New email</string>
+    <string name="oldPass">Old password</string>
+    <string name="newPass">New password</string>
+    <string name="newRepass">Write the new password again</string>
+    <string name="usernameChanged">Username changed</string>
+    <string name="usermailChanged">Email changed</string>
+    <string name="wrongPass">Wrong password</string>
+    <string name="passwordChanged">Password changed</string>
+    <string name="toast_succesRegister">Register succeeded</string>
 
 </resources>
